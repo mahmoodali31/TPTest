@@ -12,7 +12,7 @@ namespace TrackPlanTest.Controllers
         [HttpPost]
         public ActionResult DiagonalRow(TrackPlanModel model)
         {
-            return (ModelState.IsValid) ? View(model) : View(string.Empty);
+            return View(model) ;
         }
     }
 }
