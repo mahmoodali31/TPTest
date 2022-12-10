@@ -1,0 +1,62 @@
+﻿@model  TrackPlanTest.Models.TrackPlanModel
+@using System.Text;
+@{
+    ViewBag.Title = "About";
+    int count = 0; int count1 = 2;
+    var name = Model.Name.Replace(" ", "");
+}
+
+
+<table>
+    @foreach (var item in name)
+    {
+        <tr>
+            @for (int i = 0; i < count; i++)
+            {
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            }
+            <td><h3> @item </h3></td>
+        </tr>
+        count++;
+    }
+
+    <tr>
+        <td>
+            &nbsp;&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="position: absolute; margin-top: 10px">Also in reverse:</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;
+        </td>
+    <tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;
+        </td>
+    </tr>
+
+    @foreach (var item in name)
+    {
+        <tr>
+            @for (int i = name.Length; i >= count1; i--)
+            {
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            }
+            <td><h3> @item </h3></td>
+        </tr>
+        count1++;
+    }
+</table>
