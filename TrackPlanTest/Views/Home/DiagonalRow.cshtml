@@ -1,12 +1,17 @@
 ﻿@model  TrackPlanTest.Models.TrackPlanModel
 @using System.Text;
+
 @{
+    if (string.IsNullOrWhiteSpace(Model.Name))
+    {
+        return;
+    }
     ViewBag.Title = "DiagonalRow";
     int count = 0; int count1 = 2;
     var name = Model.Name.Replace(" ", "");
 }
 <table>
-    @foreach (var item in name)
+    @foreach (var nchar in name)
     {
         <tr>
             @for (int i = 0; i < count; i++)
@@ -14,7 +19,7 @@
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             }
-            <td><h3> @item </h3></td>
+            <td><h3> @nchar </h3></td>
         </tr>
         count++;
     }
@@ -43,7 +48,7 @@
             &nbsp;&nbsp;
         </td>
     </tr>
-    @foreach (var item in name)
+    @foreach (var nchar in name)
     {
         <tr>
             @for (int i = name.Length; i >= count1; i--)
@@ -51,7 +56,7 @@
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
             }
-            <td><h3> @item </h3></td>
+            <td><h3> @nchar </h3></td>
         </tr>
         count1++;
     }
